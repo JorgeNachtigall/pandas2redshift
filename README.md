@@ -42,6 +42,17 @@ with engine.connect() as conn:
     )
 ```
 
+**IMPORTANT**: If your data does not appear in the target table after executing the example above, it may be because SQLAlchemy is not committing your operations to Redshift. To resolve this issue, create the engine as follows:
+
+```python
+engine = (
+    create_engine('redshift+psycopg2://user:password@host:port/dbname')
+    .execution_options(
+        autocommit=True, isolation_level="AUTOCOMMIT"
+    )
+)
+```
+
 You can enhance the functionality of the `insert` function with several optional arguments:
 
 - `ensure_exists (bool, optional)`: Checks if the schema and table you are inserting data into exist in the database. If they do not exist, it creates them. Defaults to `False`.
