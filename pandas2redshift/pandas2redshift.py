@@ -131,7 +131,7 @@ def copy(
     COPY_QUERY = dedent(
         f"""
             COPY {schema}.{table_name}
-            FROM '{aws_bucket_path}'
+            FROM '{aws_bucket_name}/{aws_bucket_path}'
             {BREAK_LINE.join(query_args)}
             ACCESS_KEY_ID '{aws_access_key}'
             SECRET_ACCESS_KEY '{aws_secret_key}'
