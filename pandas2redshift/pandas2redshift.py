@@ -160,7 +160,7 @@ def create_table(
         schema (str): The schema of the table.
         data_types (Dict): A dictionary of column names and their data types.
     """
-    column_definitions = ",\n".join(f"{key} {val}" for key, val in data_types.items())
+    column_definitions = ",\n".join(f'"{key}" {val}' for key, val in data_types.items())
     CREATE_TABLE_QUERY = f"""
         CREATE TABLE {schema}.{table_name} (
             {column_definitions}
