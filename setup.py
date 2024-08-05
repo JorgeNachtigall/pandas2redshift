@@ -6,7 +6,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="pandas2redshift",
-    version="0.0.4",
+    version="0.0.5",
     author="Jorge Nachtigall",
     author_email="jlnvjunior@gmail.com",
     description="A tool for exporting Pandas dataframes to Redshift tables",
