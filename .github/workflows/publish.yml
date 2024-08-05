@@ -22,7 +22,7 @@ jobs:
         pip install -r requirements-test.txt
     - name: Run tests
       run: |
-        pytest
+        pytest tests
 
   deploy:
     runs-on: ubuntu-latest
